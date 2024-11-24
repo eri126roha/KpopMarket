@@ -1,0 +1,19 @@
+/* Fix the header to the top */
+.bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure the header is always on top */
+  }
+  
+  /* Add padding to the top of the page content to prevent it from being hidden under the header */
+  body {
+    padding-top: 60px; /* Adjust this based on the height of your header */
+  }
+  
+  /* Navbar styling (Optional adjustments) */
+  .navbar {
+    padding: 1rem;
+  }
+  

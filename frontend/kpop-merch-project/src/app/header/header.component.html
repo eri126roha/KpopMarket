@@ -1,7 +1,7 @@
 <div class="bar bg-light">
     <div class="container">
       <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" routerLink="/home">MonSite</a>
+        <a class="navbar-brand" routerLink="/home">Kpop Merch Market</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -10,11 +10,25 @@
             <li class="nav-item">
               <a class="nav-link" routerLink="/home">Home</a>
             </li>
-            <li class="nav-item" *ngIf="isAdmin()">
-              <a class="nav-link" routerLink="/listusers">Liste des utilisateurs</a>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/about">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/contact">Contact</a>
+              <a class="nav-link" routerLink="/listmerchs">Merchs</a>
+            </li>
+            <!-- Show Cart and Wishlist only when authenticated -->
+            <li class="nav-item" *ngIf="isAuthenticated()">
+              <a class="nav-link" routerLink="/cart">Cart</a>
+            </li>
+            <li class="nav-item" *ngIf="isAuthenticated()">
+              <a class="nav-link" routerLink="/wishlist">Wishlist</a>
+            </li>
+            <!-- Show Login link if not authenticated -->
+            <li class="nav-item" *ngIf="!isAuthenticated()">
+              <a class="nav-link" routerLink="/login">Login</a>
+            </li>
+            <li class="nav-item" *ngIf="isAuthenticated()">
+              <a class="nav-link" (click)="logout()">Logout</a>
             </li>
           </ul>
         </div>

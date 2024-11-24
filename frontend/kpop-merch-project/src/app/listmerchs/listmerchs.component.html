@@ -1,0 +1,33 @@
+<div class="container mt-4">
+    <div *ngIf="merchs.length > 0; else noMerchs">
+      <h3 class="text-center">Users List</h3>
+      <ul class="list-group">
+        <li *ngFor="let merch of merchs" class="list-group-item d-flex justify-content-between align-items-center">
+          <div>
+            <strong>Image <Picture></Picture> :</strong> {{ merch.imageUrl }}<br>
+            <strong>Name :</strong> {{ merch.name }}<br>
+            <strong>Description :</strong> {{ merch.description }}<br>
+            <strong>Category :</strong> {{ merch.category }}<br>
+            <strong>Price :</strong> {{ merch.price }}<br>
+          </div>
+          <div>
+            <!-- Bouton pour modifier le produit -->
+            <button class="btn btn-primary me-2" [routerLink]="['/merchs/update', merch._id]">
+              Update
+            </button>
+            <!-- Bouton pour supprimer le produit -->
+            <button class="btn btn-danger" (click)="onDeleteMerch(merch._id)">
+              Delete
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
+    
+    <ng-template #noMerchs>
+      <div class="alert alert-warning text-center" role="alert">
+        No existing merch.
+      </div>
+    </ng-template>
+  </div>
+  

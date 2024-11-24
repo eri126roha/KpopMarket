@@ -1,0 +1,21 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            User Profile
+          </div>
+          <div class="card-body">
+            <p><strong>First Name:</strong> {{ user.firstname }}</p>
+            <p><strong>Last Name:</strong> {{ user.lastname }}</p>
+            <p><strong>Email:</strong> {{ user.email }}</p>
+            <p><strong>Phone:</strong> {{ user.phoneNumber }}</p>
+            <div *ngIf="user.profilePicture">
+              <img [src]="user.profilePicture" alt="Profile Picture" class="img-fluid rounded-circle" width="100">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

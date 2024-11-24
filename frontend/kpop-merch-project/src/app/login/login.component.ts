@@ -25,7 +25,7 @@ export class LoginComponent {
 
     this.authService.loginUser(email, password).subscribe(
       (response) => {
-        console.log('Login successful:', response);
+        console.log('Login successfulLY:', response);
         const token = response.token;
         const role= response.role;
         if(token){
@@ -33,10 +33,10 @@ export class LoginComponent {
           this.cookieService.set('token', token, cookieExpirationDays, '/','',true,'Strict');
           this.cookieService.set('role', role, cookieExpirationDays, '/', '', true, 'Strict');
         }
-        alert('Login successful!'); // You can customize this message
+        alert('Login successful!Y'); // You can customize this message
         // Redirect to the desired page after successful login
         if(this.authService.isTokenValid(token)){
-          this.router.navigate(['/home']);
+          this.router.navigate(['/user-profile']);
         } else{
           alert("Token invalide, veuillez réessayer.");
         } 
